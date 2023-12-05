@@ -2,7 +2,9 @@ import express from 'express'
 import MusicInstrument from '../controllers/musicInstrument.js';
  
 const router = express.Router();
-
+router.get('/', (req, res)=>{
+  res.status(200).json({message: 'work!!'})
+})
 router.get('/alatmusik', MusicInstrument.index);
 router.get('/alatmusik/filter', MusicInstrument.filter);
 router.post('/alatmusik', MusicInstrument.store);
